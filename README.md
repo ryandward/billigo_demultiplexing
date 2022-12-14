@@ -27,3 +27,20 @@ cutadapt -j12 \
 BillPlate_S66_L003_R1_001.fastq \
 BillPlate_S66_L003_R2_001.fastq
 ```
+
+#To do everything in a directory: 
+
+```
+mkdir Demux
+
+for i in *R1*gz; do
+    export forward=$i;
+    export reverse=$(echo $forward | sed 's/R1/R2/g');
+    export forward_out=${forward%%.fastq.gz}
+    export reverse_out=${reverse%%.fastq.gz}
+    echo cutadapt -j12 --no-indels -g file:billigos.fasta -o Demux/${forward_out}-{name}.fastq.gz -p Demux/${reverse_out}-{name}.fastq.gz $forward $reverse
+
+done > cutadapt_demultiplex.sh
+
+bash cutadapt_demultiplex.sh
+```
