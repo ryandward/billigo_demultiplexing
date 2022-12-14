@@ -28,7 +28,7 @@ BillPlate_S66_L003_R1_001.fastq \
 BillPlate_S66_L003_R2_001.fastq
 ```
 
-#To do everything in a directory: 
+# To do everything in a directory: 
 
 ```
 mkdir Demux
