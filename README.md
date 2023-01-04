@@ -13,7 +13,7 @@ conda config --set channel_priority strict
 (Create and) activate cutadapt environment in conda
 
 ```
-onda create -n cutadapt cutadapt
+conda create -n cutadapt cutadapt
 conda activate cutadapt
 ```
 
