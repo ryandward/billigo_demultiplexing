@@ -10,9 +10,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Activate cutadapt environment in conda
+(Create and) activate cutadapt environment in conda
 
 ```
+onda create -n cutadapt cutadapt
 conda activate cutadapt
 ```
 
