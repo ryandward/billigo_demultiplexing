@@ -29,6 +29,14 @@ BillPlate_S66_L003_R1_001.fastq \
 BillPlate_S66_L003_R2_001.fastq
 ```
 
+Or, to NOT trim and only filter -- something like this
+
+```
+cutadapt -j 12 --no-indels --action=none -g file:billigos.fasta \
+-o filtered-R1-{name}.fastq.gz -p filtered-R2-{name}.fastq.gz \
+JasonPlate_S100_L002_R1_001.fastq.gz JasonPlate_S100_L002_R2_001.fastq.gz
+```
+
 # To do everything in a directory: 
 
 This code creates a directory called `Demux` and then processes a set of paired-end FASTQ files in that directory using the `cutadapt` tool. The code is setting up a loop to process all files ending in `R1` and `gz` in the current directory. For each of these files, the code sets up a number of environment variables:
